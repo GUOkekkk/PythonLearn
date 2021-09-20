@@ -1,0 +1,304 @@
+dir(__builtins__)  #输出bif
+
+help(input)  #解释函数
+
+print("wgffsug"*8)
+
+****python中类的应用****
+
+r #原始字符串
+
+\  #转义字符
+
+\n #回车
+\t #空格
+
+"""  #三重引号 保留格式 也可以当作注释
+
+temp=input() #先把输入值赋给一个变量
+
+if：
+else：  #条件分支
+
+Spyder整段缩进用tab四格
+
+
+import random
+print(dir(random))
+help(random.BPF) #查看model的method
+
+整型int()
+浮点型float()
+字符串str()
+布尔类型bool
+e算法/科学计数法 1.5e11
+
+a+=3 #a=a+3
+
+//  #取整除法
+
+** #幂运算  比左侧优先级高 比右侧优先级低
+type()
+isinstance() #判断数据类型 isinstance(52.0,float)--->true
+
+elif #else if
+
+for i in menmber:
+   print(i)              
+
+range(5)=range(0,5)=0,1,2,3,4
+
+break #跳出循环
+continue #继续下一个循环
+
+[]创建列表
+
+列表 list #多种数据类型和对象的集合
+
+member.extend #添加列表
+member.append #添加元素
+member.insert(index,object) #往具体位置添加
+
+member.remove() #删除一个元素
+del member[index] #删除member中的一个元素
+member.pop(index) #取出最后一个元素并返回或指定元素
+
+member[1:3] #列表分层 复制出一个新的列表 从1开始 到3结束 但没有3
+
+#list比较大小的时候从0比较
+
+list.count ()  #计数
+list.index(()  #查找位置，可以设置范围  
+list.reverse()  #把列表反转  #reversed
+list.sort()  #从小到大排序    #sorted
+list.sort(reverse=TRUE) #从大到小排序
+
+list[:]  #用于复制列表
+
+元组  tuple #不可以被修改 创建元组的关键是逗号
+                      eg：8*（8，）=（8，8，8，8，8，8....）
+
+temp=temp[:2]+('ahdk',)+temp[2:] #添加元素到元组中(修改字符也类似)
+
+"{a} love {b}.{c}".format(a="I",b='www',c="come")  #{0：0.1f} 格式化符号
+
+'%c' % 98  #格式化转换
+
+list(iterable)   #迭代器生成的list
+
+enumberate()  #返回列表中每个元素的index值和自身的值
+
+zip #将多个列表打包 升维
+
+parameter #形式参数
+argument # 实际参数
+
+# 函数定义中只有“”中的函数文档才能被help出来
+
+def ff1(*parameter)  #收集参数，可以打入一个元组作为参数
+
+全局变量 global variable #在函数内部试图修改一个全局变量会生成一个新的局部变量
+局部变量 local  variable #只在自己的函数中才可以用
+
+在定义函数中，global variable可以把这个variable变成全局变量
+
+内嵌函数不能单独调用
+
+closure #函数的闭包  def Funx(x):  def Funy(y)
+                             赋值时Funx(x)(y)
+
+lambda x : 2*x1 #匿名函数
+
+filter(function,list)   #定义一个过滤函数，过滤列表，返回一个迭代器iterable
+                                   得到true和>0的元素
+
+map(function,liist)  #将list应用了function的映射输出出来
+
+import sys
+sys.setrecursionlimit(100000)  #设置递归的最大深度
+
+print('%d   ：%d'   %(number,dheuu))   #在具体位置输出多个数据
+
+字典 key键 value值    dict1={key:value}
+                                 dict2=dict((('F',70),('C',67)))
+                                 dict3=dict(王国维='人间词话')
+                                 dic4['陈奕迅']='最佳损友'
+
+dict.fromkeys()    #创建一个新的字典
+
+keys
+values
+items  
+get(index,'设定为空的返回值')      #访问字典
+clear  #清空字典
+popitem  #从字典中弹出最后一个元素
+
+id() #查找地址
+
+set={1，2，3}  #集合，不可以set[3]直接索引
+                           集合中元素唯一
+
+add，remove #增添集合中元素
+
+split(':',3)  #以':'为分割符，只分割2次
+frozenset   #不可变集合
+
+python中读取文件是用指针
+read
+tell #显示指针位置
+list #用列表形式读出
+readline #读取一行
+seek #移动指针位置
+write #写入               
+
+
+os模块   
+getcwd()  #返回当前工作目录
+listdir()   #返回当前目录的文件名
+remove()   #删除文件
+
+time模块
+文件的时间
+
+pickle模块
+#将python中的数据对象变为二进制文件储存起来
+   把数据包打包出来，避免代码的冗余
+import pickle
+my_list=[123,456,'小甲鱼']
+pickle_file=open('my_list.pkl','wb')
+pickle.dump(my_list,pickle_file)
+pickle_file.close()   #储存
+
+import pickle
+pickle_file=open('my_list.pkl','rb')
+my_list2=pickle.load(pickle_file)  #读取      
+
+
+try:
+    code
+except Error as reason:
+   code   
+finall:
+  code(一定会被执行) 
+
+eg:
+try:
+    f=open("我是一个文件.txt")
+    print(f.read())
+    f.close()
+except OSError as reason:
+    print('文件出错了\n错误的原因是'+str(reason))  
+finally:
+    f.close()      
+
+raise type of error("异常")  #自主引发异常
+
+else  #可以和while,for搭配。必须循环完成才能成功执行，break之后无法执行
+          or try语句里没有异常，直接执行else的语句
+
+with   #简洁的 try finall 语句 
+            eg:  
+                with open() as f:   #退出with的语句后会自动执行close
+
+ from os import *  #直接导入库中所有的函数，可以直接使用函数                                   
+
+EasyGui  #简单的图像使用库
+
+对象=属性+方法  #对象是类的一个实例， class Nash #类以大写字母开头
+                               eg：
+
+                                    class Nash:
+                                             height=175
+                                     def run(self):
+                                                    code
+nash=Nash()   #创建一个实例对象
+
+Object Oriented面向对象的特征：
+                                     封装：使信息更加安全
+                                     继承：子类自动继承父类的特征
+                                     多态：不同类的同名函数不同
+
+
+Python的特殊方法 双下滑线构成 eg： def __init__(self, name='keke'): #设置默认参数
+
+python私有信息  eg：__name #在变量前加双下划线
+
+
+继承  #class 子类（父类）
+super().__init__()  #super函数直接继承父类的方法，不用再重新定义新的同名函数
+
+
+实例对象属性重新赋值，会覆盖掉原来的类属性。
+实例属性名和类方法名一致时，属性名覆盖方法名
+
+类名.__dict__  #查看类
+                                                    
+__new__  #类的实例对象的构造           
+
+__del__    #垃圾回收机制，所有标签被删除之后，会引用这个方法
+
+__add__(self,other)  #可以定义新的加法  return int(self)*int(another)
+
+int #工厂函数，其实是一个已经定义的类                
+
+__radd__  #反运算  从右往左的顺序
+
+__iadd__  #定义赋值加运算     
+
+
+getattr(x,'c','没有这个属性')  #获取类的信息的方法
+
+super().__setattr__()  #调用基类函数，防止因为修改__setattr__而造成的递归
+
+#协议类似于接口，在python中更像一个指南
+
+
+class Countlist:
+    def __init__(self, *args):    #不确定设置几个元素，这里设置一个可变变量
+        self.values = [x for x in args]
+        self.count = {}.fromkeys(range(len(self.values)), 0)
+
+    def __len__(self):
+        return len(self, values)
+
+    def __getitem__(self, key):    #字典的使用！！
+        self.count[key] += 1
+        return self.values[key]                   
+
+
+
+iter  next  #迭代器               
+
+yield   #生成器
+
+a=[i for i in range(100) if not (i%2) and i%3]
+
+b={i : i % 2 ==0 for i in range(10）}                         
+
+if __name__ =='__main__'  #判断这个程序是作为库引用还是主程序
+
+
+tensorflow.__all___  #显示可以外部调用的类和函数
+
+
+import urllib.request as ub
+ub.urlopen()                              #打开网页                                                
+
+
+pycharm用edit configuration要选定特殊文件
+直接run就行 可以自己配置环境
+
+用 a,b =map(int,input().spilt(""))来获取输入
+
+import sys 
+for line in sys.stdin:
+    a = line.split()
+    print(int(a[0]) + int(a[1]))
+
+
+为了保证有输入：while True:
+			try:
+				语句
+			except: break
+
+ord(c) 转换为ascii码

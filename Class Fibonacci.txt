@@ -1,0 +1,17 @@
+class Fibs:
+    def __init__(self,n=10):
+        self.a=0
+        self.b=1
+        self.n=n               #增加个参数
+    def __iter__(self):
+        return self
+    def __next__(self):
+        self.a,self.b=self.b,self.a+self.b   #多个元素的赋值
+        if self.a>self.n:
+            raise StopIteration     #设置迭代范围
+        return self.a                   #迭代器必须返回一个值
+n=int(input('请输入迭代范围：'))      
+fibs=Fibs(n)
+for each in fibs:
+    print(each)
+

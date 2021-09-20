@@ -1,0 +1,32 @@
+import numpy as np
+m = 20  # 样本数量
+x0 = np.ones((m, 1))
+x1 = np.arange(1, m + 1).reshape(m, 1)
+X = np.hstack((x0, x1))
+y = np.array([3, 4, 5, 5, 2, 4, 7, 8, 11, 8, 12, 11, 13,
+              13, 16, 17, 18, 17, 19, 21]).reshape(m, 1)
+k = 0.01  # 学习率
+
+
+def s_function(theta, X, y):
+    diff = np.dot(X, theta) - y
+    return (1. / 2 * m) * np.dot(np.transpose(diff), diff)  # 均方误差代价函数
+
+
+def tidu_functionn(theta, X, y):
+    diff = np.dot(X, theta) - y
+    return (1. / m) * np.dot(np.transpose(X), diff)
+
+
+def tiduxiajiang(X, y, k):
+    theta = np.array([1, 1]).reshape(2, 1)
+    tidu = tidu_functionn(theta, X, y)
+    while not np.all(np.absolute(tidu) <= 1e-5):
+        theta = theta - k * tidu
+        tidu = tidu_functionn(theta, X, y)
+    return theta
+
+
+optimal = tiduxiajiang(X, y, k)
+print('参数:', optimal)
+print('损失函数：', s_function(optimal, X, y)[0, 0])

@@ -1,0 +1,17 @@
+import random as ran
+key=ran.randint(1,10)
+temp=input("请输入一个值：")
+guess=int(temp)
+n=0
+while guess!=key and n<=6:
+    if guess>key:
+            print("smaller")
+    else:
+            print("bigger")
+    temp=input("请再输入一个值：")
+    guess=int(temp)
+    n=n+1
+if guess==key:
+    print("Congratulations！\nGame over!")
+else: 
+    print("r u kididng me")
